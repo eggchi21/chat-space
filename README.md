@@ -16,13 +16,10 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name||string|null: false|
-|user_id|integer|
-|message_id|integer|
+|name||string|null: false|s
 
 ### Association
 - has_many :members
-- has_many :messages
 - has_many :users, through: :members
 
 ## membersテーブル
