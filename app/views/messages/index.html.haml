@@ -1,55 +1,55 @@
 %html
     %body
-        %div{:class=>"header"}
+        .header
             グループを作成しました
-        %div{:class=>"side-bar"}
-            %div{:class=>"side-bar-header"} 
-                %div{:class=>"side-bar-header__name"}
+        .side-bar
+            .side-bar-header
+                .side-bar-header__name
                     ジョルジョ・ジョバーナ
-                %ul{:class=>"side-bar-header__icons"}
+                .side-bar-header__icons
                     %li{:class=>"fa fa-edit"}
-                    %li{:class=>"fa fa-cog"}       
+                    %li{:class=>"fa fa-cog"}     
 
-            %div{:class=>"side-bar-group"}
-                %div{:class=>"side-bar-group__name"}   
+            .side-bar-group
+                .side-bar-group__name   
                     パッショーネ
-                %div{:class=>"side-bar-group__new-message"}    
+                .side-bar-group__new-message    
                     ボラボラボラ
-                %div{:class=>"side-bar-group__name"}   
+                .side-bar-group__name   
                     スターダストクルセイダー
-                %div{:class=>"side-bar-group__new-message"}    
+                .side-bar-group__new-message    
                     オラオラオラ        
-        %div{:class=>"chat"}
-            %div{:class=>"chat-header"} 
-                %div{:class=>"chat-header-left"}
-                    %div{:class=>"chat-header-left__group-name"}
+        .chat
+            .chat-header 
+                .chat-header-left
+                    .chat-header-left__group-name
                         パッショーネ
-                    %div{:class=>"chat-header-left__group-members"}
+                    .chat-header-left__group-members
                         ジョルジョ・ジョバーナ ブローノ・ブチャラティ ナランチャ・ギルガ
-                %div{:class=>"chat-header-right"}
+                .chat-header-right
                     Edit
-            %div{:class=>"chat-messages"}         
-                %div{:class=>"chat-messages-1"}
-                    %div{:class=>"chat-messages-1__username"}
+            .chat-messages         
+                .chat-messages-1
+                    .chat-messages-1__username
                         ブローノ・ブチャラティ
-                    %div{:class=>"chat-messages-1__time"}
+                    .chat-messages-1__time
                         2019/02/13(Wed)17:30:42
-                    %div{:class=>"chat-messages-1__message"}
+                    .chat-messages-1__message
                         アリアリアリ
-                %div{:class=>"chat-messages-2"}
-                    %div{:class=>"chat-messages-2__username"}
+                .chat-messages-2
+                    .chat-messages-2__username
                         ナランチャ・ギルガ
-                    %div{:class=>"chat-messages-2__time"}
+                    .chat-messages-2__time
                         2019/02/13(Wed)17:30:43
-                    %div{:class=>"chat-messages-2__message"}
+                    .chat-messages-2__message
                         ボラボラボラ
-            %div{:class=>"chat-form"}
-                %div{:class=>"chat-form__input"} 
+            .chat-form
+                .chat-form__input 
                     =form_for @message do |f|    
-                        %div{:class=>"chat-form__input__message"}
+                        .chat-form__input__message
                             type a message    
-                        %label.chat-form__input__pic{for:"upload-icon"} 
+                        %label.chat-form__input__pic{for:"upload-icon"}
                             %i.fa.fa-picture-o  
                             =f.file_field :image, id: "upload-icon"
-                %div{:class=>"chat-form__send"}             
+                .chat-form__send             
                     SEND
