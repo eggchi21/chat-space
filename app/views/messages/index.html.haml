@@ -1,24 +1,6 @@
 %html
     %body
-        .header
-            グループを作成しました
-        .side-bar
-            .side-bar-header
-                .side-bar-header__name
-                    ジョルジョ・ジョバーナ
-                .side-bar-header__icons
-                    %li{:class=>"fa fa-edit"}
-                    %li{:class=>"fa fa-cog"}     
-
-            .side-bar-group
-                .side-bar-group__name   
-                    パッショーネ
-                .side-bar-group__new-message    
-                    ボラボラボラ
-                .side-bar-group__name   
-                    スターダストクルセイダー
-                .side-bar-group__new-message    
-                    オラオラオラ        
+        =render 'shared/side_bar'
         .chat
             .chat-header 
                 .chat-header-left

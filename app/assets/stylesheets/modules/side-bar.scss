@@ -13,9 +13,16 @@
             @include display;
             font-size: 16px;
         }
-        &__icons{
+        &__lists{
             @include display;
             float: right;
+            .list {
+                display: inline-block;
+              }
+            .icon {
+                color: $white;
+                font-size: $side_header_font;
+            }
         }        
     }
     &-group{
