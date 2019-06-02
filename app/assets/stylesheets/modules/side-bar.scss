@@ -30,10 +30,12 @@
         height: calc(100vh - 100px);
         padding: 0 $side-bar-padding ;
         &__name{
+            color: $white;
             padding-top: $side-bar-padding;
             font-size: 15px;
         }
         &__new-message{
+            color: $white;
             font-size: 11px;
             padding-top: 5px;
             padding-bottom: 40px;
