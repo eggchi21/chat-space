@@ -1,7 +1,9 @@
 /*
  *= require font-awesome
  */
-
+ .wrapper{
+    display:flex;
+  }
 @import "./reset";
 @import "font-awesome";
 @import "config/_variable.scss";
@@ -9,4 +11,7 @@
 @import "modules/header.scss";
 @import "modules/side-bar.scss";
 @import "modules/chat.scss";
-
+@import "modules/user";
+@import "modules/group";
+@import "config/colors";
+@import "modules/flash";

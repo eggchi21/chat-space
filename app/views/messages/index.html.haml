@@ -1,55 +1,23 @@
 %html
     %body
-        .header
-            グループを作成しました
-        .side-bar
-            .side-bar-header
-                .side-bar-header__name
-                    ジョルジョ・ジョバーナ
-                .side-bar-header__icons
-                    %li{:class=>"fa fa-edit"}
-                    %li{:class=>"fa fa-cog"}     
-
-            .side-bar-group
-                .side-bar-group__name   
-                    パッショーネ
-                .side-bar-group__new-message    
-                    ボラボラボラ
-                .side-bar-group__name   
-                    スターダストクルセイダー
-                .side-bar-group__new-message    
-                    オラオラオラ        
+        =render 'shared/side_bar'
         .chat
-            .chat-header 
+            .chat-header
                 .chat-header-left
                     .chat-header-left__group-name
-                        パッショーネ
+                        =@group.name
                     .chat-header-left__group-members
-                        ジョルジョ・ジョバーナ ブローノ・ブチャラティ ナランチャ・ギルガ
+                        - @group.users.each do |user|
+                            = user.name
                 .chat-header-right
-                    Edit
-            .chat-messages         
-                .chat-messages-1
-                    .chat-messages-1__username
-                        ブローノ・ブチャラティ
-                    .chat-messages-1__time
-                        2019/02/13(Wed)17:30:42
-                    .chat-messages-1__message
-                        アリアリアリ
-                .chat-messages-2
-                    .chat-messages-2__username
-                        ナランチャ・ギルガ
-                    .chat-messages-2__time
-                        2019/02/13(Wed)17:30:43
-                    .chat-messages-2__message
-                        ボラボラボラ
+                    = link_to  "Edit", edit_group_path(@group)
+            .chat-messages
+                = render partial: 'message', collection: @messages
             .chat-form
-                .chat-form__input 
-                    =form_for @message do |f|    
-                        .chat-form__input__message
-                            type a message    
-                        %label.chat-form__input__pic{for:"upload-icon"}
-                            %i.fa.fa-picture-o  
-                            =f.file_field :image, id: "upload-icon"
-                .chat-form__send             
-                    SEND
+                =form_for [@group, @message] do |f|
+                    =f.text_field :content, class: 'chat-form__message',placeholder: ' type a message'
+                    .chat-form__mask
+                        = f.label :image, class: 'chat-form__mask__image' do
+                            = fa_icon 'picture-o', class: 'icon'
+                            = f.file_field :image, class: 'hidden'
+                    = f.submit 'Send', class: 'chat-form__submit'
