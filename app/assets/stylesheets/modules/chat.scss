@@ -1,18 +1,17 @@
 .chat{
-    float: left;
     width: calc(100% - 300px);
     &-header{
         height: 100px;
         box-sizing: border-box;
-        border-bottom:  1px solid #eeeeee;  
-        padding: 0 $chat-padding; 
+        border-bottom:  1px solid #eeeeee;
+        padding: 0 $chat-padding;
         &-left{
             @include display;
             margin-top:35px;
             &__group-name{
                 font-size: 20px;
                 color: #333333;
-                margin-bottom: 15px;    
+                margin-bottom: 15px;
             }
             &__group-members{
                 font-size: 12px;
@@ -36,7 +35,8 @@
         background-color: #FAFAFA;
         box-sizing: border-box;
         padding: 46px 40px 0;
-        height: calc(100% - 100px - 90px);
+        height: calc(100vh - 100px - 90px);
+        overflow: scroll;
         .message {
           .upper-message {
             display: flex;
@@ -62,7 +62,7 @@
         }
     }
     &-form{
-        background-color: #dddddd; 
+        background-color: #dddddd;
         box-sizing: border-box;
         height: 90px;
         padding: 20px 50px 20px 40px;
@@ -71,7 +71,7 @@
             float: left;
             height: 50px;
             width: calc(100% - 150px);
-          }  
+          }
           &__mask {
             background-color: $white;
             float: left;
