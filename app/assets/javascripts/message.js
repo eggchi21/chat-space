@@ -34,19 +34,19 @@ return html;
         var formData = new FormData(this);
         var url= $(this).attr('action');
         $.ajax({
-					url: url,
-					type: "POST",
-					data: formData,
-					dataType: 'json',
-					processData: false,
-					contentType: false
+          url: url,
+          type: "POST",
+          data: formData,
+          dataType: 'json',
+processData: false,
+contentType: false
         })
         .done(function(message){
-					var html =buildHTML(message);
-					$('.chat-messages').append(html);
-					$('.chat-messages').animate({scrollTop:$('.chat-messages').get(0).scrollHeight},"fast");
-					$('#new_message')[0].reset();
-					$('input').removeAttr('disabled');
+          var html =buildHTML(message);
+          $('.chat-messages').append(html);
+          $('.chat-messages').animate({scrollTop:$('.chat-messages').get(0).scrollHeight},"fast");
+          $('#new_message')[0].reset();
+          $('input').removeAttr('disabled');
         })
         .fail(function(){
           alert('メッセージの送信に失敗しました')
