@@ -1,6 +1,6 @@
 $(function(){
   function buildHTML(message){
-		if (message.image==null){
+    if (message.image==null){
       var submission =`<p class="lower-message__content">
                         ${message.content}
                       </p>`;
@@ -14,20 +14,20 @@ $(function(){
                       </p>
                       <img class="lower-message__image" src= ${message.image} alt="28"></img>`;
     }
-		var html = `<div class="message">
-									<div class="upper-message">
-										<div class="upper-message__username">
-											${message.user_name}
-										</div>
-											<div class="upper-message__date">
-												${message.created_at}
-										</div>
-									</div>
-										<div class="lower-message">
-											${submission}
-										</div>
-								</div>`
-		return html;
+    var html = `<div class="message">
+                  <div class="upper-message">
+                    <div class="upper-message__username">
+                      ${message.user_name}
+                    </div>
+                    <div class="upper-message__date">
+                      ${message.created_at}
+                    </div>
+                  </div>
+                  <div class="lower-message">
+                    ${submission}
+                  </div>
+                </div>`
+return html;
     }
     $('#new_message').on('submit', function(e){
         e.preventDefault();
