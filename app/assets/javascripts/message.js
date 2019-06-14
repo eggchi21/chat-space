@@ -2,7 +2,7 @@ $(function(){
     function buildHTML(message){
         if (message.image==null){
             var submission =`<p class="lower-message__content">
-                              ${message.content}
+                            ${message.content}
                             </p>`;
         }
         else if (message.content==null){
@@ -17,14 +17,14 @@ $(function(){
         var html = `<div class="message">
                         <div class="upper-message">
                             <div class="upper-message__username">
-                                ${message.user_name}
+                            ${message.user_name}
                             </div>
                             <div class="upper-message__date">
-                                ${message.created_at}
+                            ${message.created_at}
                             </div>
                         </div>
                         <div class="lower-message">
-                            ${submission}
+                        ${submission}
                         </div>
                     </div>`
         return html;
