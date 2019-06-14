@@ -45,8 +45,7 @@ $(function(){
             var html =buildHTML(message);
             $('.chat-messages').append(html);
             $('.chat-messages').animate({scrollTop:$('.chat-messages').get(0).scrollHeight},"fast");
-            $('#message_content').val('');
-            $('#message_image').val('');
+            $('#new_message')[0].reset();
             $('input').removeAttr('disabled');
         })
         .fail(function(){
