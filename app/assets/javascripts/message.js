@@ -38,8 +38,8 @@ return html;
           type: "POST",
           data: formData,
           dataType: 'json',
-processData: false,
-contentType: false
+          processData: false,
+          contentType: false
         })
         .done(function(message){
           var html =buildHTML(message);
