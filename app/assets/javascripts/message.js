@@ -1,30 +1,30 @@
 $(function(){
-    function buildHTML(message){
-        if (message.image==null){
-            var submission =`<p class="lower-message__content">
-                            ${message.content}
-                            </p>`;
+  function buildHTML(message){
+   if (message.image==null){
+      var submission =`<p class="lower-message__content">
+                        ${message.content}
+                      </p>`;
         }
         else if (message.content==null){
             var submission =` <img class="lower-message__image" src= ${message.image} alt="28"></img>`;
         }
         else{
             var submission=`<p class="lower-message__content">
-                            ${message.content}
+                            	${message.content}
                             </p>
                             <img class="lower-message__image" src= ${message.image} alt="28"></img>`;
         }
         var html = `<div class="message">
                         <div class="upper-message">
                             <div class="upper-message__username">
-                            ${message.user_name}
+                            	${message.user_name}
                             </div>
                             <div class="upper-message__date">
-                            ${message.created_at}
+                            	${message.created_at}
                             </div>
                         </div>
                         <div class="lower-message">
-                        ${submission}
+                        	${submission}
                         </div>
                     </div>`
         return html;
@@ -49,8 +49,8 @@ $(function(){
             $('input').removeAttr('disabled');
         })
         .fail(function(){
-            alert('メッセージの送信に失敗しました')
-            $('input').removeAttr('disabled');
+          alert('メッセージの送信に失敗しました')
+          $('input').removeAttr('disabled');
         })
     })
 });
