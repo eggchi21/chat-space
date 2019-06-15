@@ -1,23 +1,23 @@
 %html
-    %body
-        =render 'shared/side_bar'
-        .chat
-            .chat-header
-                .chat-header-left
-                    .chat-header-left__group-name
-                        =@group.name
-                    .chat-header-left__group-members
-                        - @group.users.each do |user|
-                            = user.name
-                .chat-header-right
-                    = link_to  "Edit", edit_group_path(@group)
-            .chat-messages
-                = render partial: 'message', collection: @messages
-            .chat-form
-                =form_for [@group, @message] do |f|
-                    =f.text_field :content, class: 'chat-form__message',placeholder: ' type a message'
-                    .chat-form__mask
-                        = f.label :image, class: 'chat-form__mask__image' do
-                            = fa_icon 'picture-o', class: 'icon'
-                            = f.file_field :image, class: 'hidden'
-                    = f.submit 'Send', class: 'chat-form__submit'
+  %body
+    =render 'shared/side_bar'
+    .chat
+      .chat-header
+        .chat-header-left
+          .chat-header-left__group-name
+            =@group.name
+          .chat-header-left__group-members
+            - @group.users.each do |user|
+              = user.name
+        .chat-header-right
+          = link_to  "Edit", edit_group_path(@group)
+      .chat-messages
+        = render partial: 'message', collection: @messages
+      .chat-form
+        =form_for [@group, @message] do |f|
+          =f.text_field :content, class: 'chat-form__message',placeholder: ' type a message'
+          .chat-form__mask
+            = f.label :image, class: 'chat-form__mask__image' do
+              = fa_icon 'picture-o', class: 'icon'
+              = f.file_field :image, class: 'hidden'
+          = f.submit 'Send', class: 'chat-form__submit'
