@@ -49,7 +49,7 @@ $(function(){
       $('input').removeAttr('disabled');
     })
     .fail(function(){
-      alert('ユーザー検索に失敗しました')
+      alert('メッセージの送信に失敗しました')
       $('input').removeAttr('disabled');
     })
   })

@@ -23,10 +23,11 @@
       = f.label :user_ids,"チャットメンバー" ,class:"chat-group-form__label"
     .chat-group-form__field--right
       #chat-group-users
-        #chat-group-user-22.chat-group-user.clearfix
-          %input{:name => "group[user_ids][]", :type => "hidden", :value => current_user.id}
+        .chat-group-user.clearfix{id: "chat-group-user-#{current_user.id}"}
+          %input{name: "group[user_ids][]", type: "hidden", value: current_user.id}
           %p.chat-group-user__name
             = current_user.name
+        = render partial:'user' ,collection: @users
 
   .chat-group-form__field.clearfix
     .chat-group-form__field--left

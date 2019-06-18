@@ -13,6 +13,14 @@ $(function(){
               </div>`
     search_list.append(html)
   }
+
+  function addUserId(added_user_ids){
+    var added_list=$(".js-chat-member").find('input')
+    added_list.each(function(i , added_user){
+      added_user_ids.push(Number($(added_user).val()))
+    })
+    return added_user_ids
+  }
   $("#user-search-field").on("keyup",function(){
     var input=$(this).val();
     $.ajax({
@@ -24,19 +32,17 @@ $(function(){
 
     .done(function(users){
       $("#user-search-result").empty();
+      var added_user_ids=[]
+      addUserId(added_user_ids)
       if (input.length !==0 && users.length !== 0){
         users.forEach(function(user){
-
-        var added_user_ids= [];
-        var added_list=$(".js-chat-member").find('input')
-        added_list.each(function(i , added_user){
-          added_user_ids.push(Number($(added_user).val()))
-        })
-        if($.inArray(user.id,added_user_ids) == -1){
-          appendUser(user);
+          if($.inArray(user.id,added_user_ids) == -1){
+            appendUser(user);
+          }
+        });
+        if(!($(".user-search-add ").length)){
+          appendErrMsgHTML("一致するユーザーが見つかりません")
         }
-      });
-
       }
       else{
         appendErrMsgHTML("一致するユーザーが見つかりません")

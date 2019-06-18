@@ -15,6 +15,7 @@ class GroupsController < ApplicationController
     end
   end
   def edit
+    @users=@group.users.where.not(id: current_user.id)
   end
   def update
     if @group.update(group_params)
