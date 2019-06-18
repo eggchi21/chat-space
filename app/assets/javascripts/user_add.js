@@ -17,8 +17,8 @@ $(function(){
   }
   $(document).on("click",".user-search-add ",function(e){
     e.preventDefault();
-    var user_id=$(this).attr('data-user-id');
-    var user_name=$(this).attr('data-user-name');
+    var user_id=$(this).data('user-id');
+    var user_name=$(this).data('user-name');
     var user = {id: user_id , name: user_name};
     appendUser(user);
     $(this).parent().remove()
