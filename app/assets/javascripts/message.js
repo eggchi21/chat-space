@@ -14,7 +14,7 @@ $(function(){
                       </p>
                       <img class="lower-message__image" src= ${message.image} alt="28"></img>`;
     }
-    var html = `<div class="message">
+    var html = `<div class="message" data-id=` + message.id + `>
                   <div class="upper-message">
                     <div class="upper-message__username">
                       ${message.user_name}
@@ -53,4 +53,31 @@ $(function(){
       $('input').removeAttr('disabled');
     })
   })
-});
+
+  var reloadMessages = function(){
+    var last_message_id=$('.message').last().data('id')
+    var group_id=$('.chat-header-left__group-name').data('id')
+    $.ajax({
+      url: '/groups/'+ group_id +'/api/messages',
+      type: 'get',
+      data: {id: last_message_id},
+      dataType: 'json'
+    })
+    .done(function(messages){
+      messages.forEach(function(message){
+        var insertHTML = buildHTML(message);
+        $('.chat-messages').append(insertHTML);
+        $('.chat-messages').animate({scrollTop:$('.chat-messages').get(0).scrollHeight},"fast");
+      })
+    })
+    .fail(function(){
+      alert('自動更新に失敗しました')
+    })
+  }
+  $(window).on('load',function(){
+    var url=location.href
+    if(url.match(/\/groups\/\d+\/messages/)){
+      setInterval(reloadMessages, 5000);
+    }
+  })
+})
