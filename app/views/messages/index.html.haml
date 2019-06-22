@@ -4,7 +4,7 @@
     .chat
       .chat-header
         .chat-header-left
-          .chat-header-left__group-name
+          .chat-header-left__group-name{data:{id: "#{@group.id}"}}
             =@group.name
           .chat-header-left__group-members
             - @group.users.each do |user|

@@ -28,6 +28,7 @@
         background-color: #2f3e51;
         height: calc(100vh - 100px);
         padding: 0 $side-bar-padding ;
+        overflow: scroll;
         &__name{
             color: $white;
             padding-top: $side-bar-padding;
