@@ -42,7 +42,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'rails-controller-testing'
   gem 'factory_bot_rails'
-  gem 'faker' 
+  gem 'faker'
 end
 
 group :development do
@@ -64,3 +64,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
   gem "rails-i18n"
   gem 'carrierwave'
   gem 'mini_magick'
+
+group :production do
+  gem 'unicorn', '5.4.1'
+end
