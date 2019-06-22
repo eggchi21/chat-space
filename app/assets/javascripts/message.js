@@ -14,7 +14,7 @@ $(function(){
                       </p>
                       <img class="lower-message__image" src= ${message.image} alt="28"></img>`;
     }
-    var html = `<div class="message" data-id=` + message.id + `>
+    var html = `<div class="message" data-id=${message.id}>
                   <div class="upper-message">
                     <div class="upper-message__username">
                       ${message.user_name}
@@ -58,7 +58,7 @@ $(function(){
     var last_message_id=$('.message').last().data('id')
     var group_id=$('.chat-header-left__group-name').data('id')
     $.ajax({
-      url: '/groups/'+ group_id +'/api/messages',
+      url: `/groups/${group_id}/api/messages`,
       type: 'get',
       data: {id: last_message_id},
       dataType: 'json'
