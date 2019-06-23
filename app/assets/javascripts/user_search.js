@@ -15,7 +15,7 @@ $(function(){
   }
 
   function addUserId(added_user_ids){
-    var added_list=$(".js-chat-member").find('input')
+    var added_list=$(".chat-group-user").find('input')
     added_list.each(function(i , added_user){
       added_user_ids.push(Number($(added_user).val()))
     })
